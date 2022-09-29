@@ -14,4 +14,10 @@ def list_view(request):
     return render(request, 'home/list_view.html', context)
 
 
+def detail_view(request, pk):
+    pass
+
+
+
+
 
