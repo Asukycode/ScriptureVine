@@ -6,8 +6,12 @@ from .models import Post
 
 
 def list_view(request):
-    post = Post.objects.all()
+    if request.is_authenticated:
+        post = Post.objects.all()
     context = {
         'posts': post
     }
     return render(request, 'home/list_view.html', context)
+
+
+
