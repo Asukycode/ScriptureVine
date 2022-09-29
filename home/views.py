@@ -2,12 +2,13 @@ from django.shortcuts import render
 from .models import Post
 
 
+
 ## Implementing CRUD
 
 
 def list_view(request):
     if request.is_authenticated:
-        post = Post.objects.all()
+        post = Post.objects.active()
     context = {
         'posts': post
     }
@@ -15,6 +16,7 @@ def list_view(request):
 
 
 def detail_view(request, pk):
+
     pass
 
 
